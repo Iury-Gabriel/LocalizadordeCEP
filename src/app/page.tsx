@@ -18,7 +18,7 @@ function Page() {
   const [notFound, setNotFound] = useState(false)
 
   const handleSearch = async () => {
-    if (input.length < 8 && input.includes('-')) {
+    if (input.length < 8) {
       setShowWarn(true);
       setShowInfo(false);
     } else {
@@ -48,11 +48,14 @@ function Page() {
       <div className="flex flex-col">
         <div className="flex justify-center">
           <input
-            type="text"
+            type="text" 
+            pattern="[0-9]*" 
             className="rounded-md text-black p-1"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-            maxLength={8}
+            onChange={(e) => {
+              const inputValue = e.target.value.replace(/\D/g, ''); 
+              setInput(inputValue.slice(0, 8)); 
+            }}
             placeholder="Ex: 65010030"
           />
           <button onClick={handleSearch} className="ml-4 bg-blue-500 rounded-md text-black p-1">Pesquisar</button>
