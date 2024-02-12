@@ -18,7 +18,7 @@ function Page() {
   const [notFound, setNotFound] = useState(false)
 
   const handleSearch = async () => {
-    if (input.length < 8) {
+    if (input.length < 8 && input.includes('-')) {
       setShowWarn(true);
       setShowInfo(false);
     } else {
@@ -43,7 +43,7 @@ function Page() {
   }
 
   return (
-    <div className="container flex flex-col items-center gap-3 mt-14">
+    <div className="container flex flex-col items-center gap-3 mt-14 bg-black-900">
       <h1 className="text-4xl mb-5">Localizador de CEP</h1>
       <div className="flex flex-col">
         <div className="flex justify-center">
