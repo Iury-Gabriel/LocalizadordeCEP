@@ -44,8 +44,8 @@ function Page() {
 
   return (
     <div className="container flex flex-col items-center gap-3 mt-14">
-      <h1 className="text-4xl ml-20 mb-5">Localizador de CEP</h1>
-      <div className="flex flex-col ml-20">
+      <h1 className="text-4xl mb-5">Localizador de CEP</h1>
+      <div className="flex flex-col">
         <div className="flex justify-center">
           <input
             type="text"
